@@ -10,6 +10,7 @@
 PImage add;
 
 FotoBoton[] fotoBotones;
+FiltroBoton[] filtros;
 
 void setup() {
 
@@ -23,6 +24,14 @@ void setup() {
   add = loadImage("add.png");
   
   add.resize(4*width/68, 4*width/68);
+  
+  filtros = new FiltroBoton[4];    
+  filtros[0] = new FiltroBoton(5*width/68, loadImage("ranita.png"));
+  filtros[1] = new FiltroBoton(8.5*width/68, loadImage("ranita.png"));
+  filtros[2] = new FiltroBoton(12*width/68, loadImage("ranita.png"));
+  filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranita.png"));
+  
+  
 }
 
 void draw() {
@@ -31,4 +40,8 @@ void draw() {
     fotoBotones[i].dibujar();
   }  
   image(add, (39+20)*width/68, 4*width/68);
+  
+  for (int i = 0; i < filtros.length; i++) {
+    filtros[i].dibujar();
+}
 }
