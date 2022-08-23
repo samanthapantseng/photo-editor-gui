@@ -10,9 +10,10 @@ class FiltroBoton {
   color fill; // relleno
   //boolean presionado = false;
   boolean estaEncima, mouseDentro;
+  String nombre;
   
   
-  public FiltroBoton(float _py, PImage _foto) {
+  public FiltroBoton(float _py, PImage _foto, String _nombre) {
     //tipo = _tipo;
     px = 2*width/68; 
     py = _py;
@@ -24,6 +25,7 @@ class FiltroBoton {
     fotorana = _foto;
     size = 2*width/68;
     fotorana.resize(size, size);
+    nombre = _nombre;
   }
   
   void dibujar() {
@@ -40,6 +42,11 @@ class FiltroBoton {
 
     rect(px,py,ancho,alto);
     image(fotorana,pfx, pfy);
+    
+    fill(#FFFFFF);
+    textSize(0.7*width/68);
+    textAlign(LEFT);
+    text(nombre, pfx+3*width/68, pfy+1.2*width/68);
     
   }
 }

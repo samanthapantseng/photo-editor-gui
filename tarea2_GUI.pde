@@ -27,16 +27,16 @@ void setup() {
   add.resize(4*width/68, 4*width/68);
   
   filtros = new FiltroBoton[4];    
-  filtros[0] = new FiltroBoton(5*width/68, loadImage("ranita.png"));
-  filtros[1] = new FiltroBoton(8.5*width/68, loadImage("ranita.png"));
-  filtros[2] = new FiltroBoton(12*width/68, loadImage("ranita.png"));
-  filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranita.png"));
+  filtros[0] = new FiltroBoton(5*width/68, loadImage("ranita.png"), "Sepia");
+  filtros[1] = new FiltroBoton(8.5*width/68, loadImage("ranita.png"),"B&W");
+  filtros[2] = new FiltroBoton(12*width/68, loadImage("ranita.png"),"Frío");
+  filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranita.png"),"X-ray");
   
   marcos = new MarcoBoton[4];    
-  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"));
-  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"));
-  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"));
-  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"));
+  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"), "Blanco");
+  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"), "Foto");
+  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"), "Fiesta");
+  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"),"Flores");
   
   
   
@@ -55,5 +55,16 @@ void draw() {
   
   for (int i = 0; i < marcos.length; i++) {
     marcos[i].dibujar();
+    
+    
+    
+    textSize(width/68);
+    textAlign(LEFT);
+    text("FILTERS",2*width/68,4.5*width/68);
+    
+    textSize(width/68);
+    textAlign(LEFT);
+    text("FRAMES",2*width/68,21.5*width/68);
+    
 }
 }
