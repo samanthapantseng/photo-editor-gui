@@ -11,6 +11,7 @@ PImage add;
 
 FotoBoton[] fotoBotones;
 FiltroBoton[] filtros;
+MarcoBoton[] marcos;
 
 void setup() {
 
@@ -31,6 +32,13 @@ void setup() {
   filtros[2] = new FiltroBoton(12*width/68, loadImage("ranita.png"));
   filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranita.png"));
   
+  marcos = new MarcoBoton[4];    
+  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"));
+  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"));
+  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"));
+  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"));
+  
+  
   
 }
 
@@ -43,5 +51,9 @@ void draw() {
   
   for (int i = 0; i < filtros.length; i++) {
     filtros[i].dibujar();
+}
+  
+  for (int i = 0; i < marcos.length; i++) {
+    marcos[i].dibujar();
 }
 }
