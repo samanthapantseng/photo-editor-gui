@@ -9,7 +9,7 @@ class FiltroBoton {
   float alto; // largo
   color fill; // relleno
   //boolean presionado = false;
-  boolean estaEncima;
+  boolean estaEncima, mouseDentro;
   
   
   public FiltroBoton(float _py, PImage _foto) {
@@ -28,20 +28,16 @@ class FiltroBoton {
   
   void dibujar() {
     // verifica si el mouse esta cerca del objeto y cambia su estado al hover
-    boolean mouseDentro = (mouseX > px && mouseX < ancho && mouseY > py && mouseY < alto);
+    boolean mouseDentro = ( mouseX > px && mouseX < px+ancho && mouseY < py+alto && mouseY > py);
     if (mouseDentro) estaEncima = true;
     else estaEncima = false;
   
     
     noStroke();
-  
-      if (estaEncima) { // estado en reposo CON hover
-        fill(#000000);
-      }
-      else { // estado en reposo SIN hober
-        fill(#6C6C6C);
-      }
-    // }
+    if (estaEncima) fill(#000000); // estado en reposo CON hover
+    else fill(#6C6C6C); // estado en reposo SIN hover
+      
+
     rect(px,py,ancho,alto);
     image(fotorana,pfx, pfy);
     
