@@ -16,7 +16,7 @@ class Boton {
     estaEncima = false;
   }
     
-  void dibujar(float mX, float mY) {
+  void dibujar() {
     if (estaEncima == true){
       fill(#D4D4D4);
       rect(x, y, w, h);
@@ -32,7 +32,7 @@ class Boton {
     textAlign(CENTER, CENTER);
     text(nombre, x + w/2, y + h/2 - width/280);
     
-    if (mX > x && mX < x + w && mY > y && mY < y + h){
+    if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h){
       estaEncima = true;
     } else {
       estaEncima = false;
