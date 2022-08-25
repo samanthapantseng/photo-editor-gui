@@ -23,20 +23,21 @@ void setup() {
 
   fullScreen();
 
-  fotoBotones = new FotoBoton[4];    
+  fotoBotones = new FotoBoton[5];    
   fotoBotones[0] = new FotoBoton((39+0)*width/68, 4*width/68, loadImage("fotoSam.png"), loadImage("fotoSam.png"));
   fotoBotones[1] = new FotoBoton((39+5)*width/68, 4*width/68, loadImage("fotoLeslie.png"), loadImage("fotoLeslie.png"));
   fotoBotones[2] = new FotoBoton((39+10)*width/68, 4*width/68, loadImage("fotoVale.png"), loadImage("fotoVale.png"));
   fotoBotones[3] = new FotoBoton((39+15)*width/68, 4*width/68, loadImage("fotoElke.png"), loadImage("fotoElke.png"));
+  fotoBotones[4] = new FotoBoton((39+20)*width/68, 4*width/68, loadImage("fotoTodas.png"), loadImage("fotoTodas.png"));
   
   fotoSeleccionada = fotoBotones[0].fotoGrande.copy();
   numeroFoto = 0;
    
   filtros = new FiltroBoton[4];    
-  filtros[0] = new FiltroBoton(5*width/68, loadImage("ranita.png"), "TOY CAM");
-  filtros[1] = new FiltroBoton(8.5*width/68, loadImage("ranita.png"),"B&W");
-  filtros[2] = new FiltroBoton(12*width/68, loadImage("ranita.png"),"SILHOUETTE");
-  filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranita.png"),"X-RAY");
+  filtros[0] = new FiltroBoton(5*width/68, loadImage("ranitaToyCam.jpg"), "TOY CAM");
+  filtros[1] = new FiltroBoton(8.5*width/68, loadImage("ranitaB&W.jpg"),"B&W");
+  filtros[2] = new FiltroBoton(12*width/68, loadImage("ranitaSilhouette.jpg"),"SILHOUETTE");
+  filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranitaXray.jpg"),"X-RAY");
   
   marcos = new MarcoBoton[4];    
   marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"), "Blanco");
