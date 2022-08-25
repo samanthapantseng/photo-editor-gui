@@ -9,6 +9,8 @@
 
 PImage add;
 PImage fotoSeleccionada;
+PImage fotoGuardada;
+int numeroFoto = 1;
 
 FotoBoton[] fotoBotones;
 FiltroBoton[] filtros;
@@ -82,5 +84,11 @@ void mousePressed() {
         fotoSeleccionada = fotoBotones[i].fotoGrande;        
       }
     }
+    
+    if (save.estaEncima) {
+      fotoGuardada = get(39*width/68, 9*width/68, 24*width/68, 24*width/68);
+      fotoGuardada.save("tuFotoEditada" + nf(numeroFoto, 2) + ".jpg");
+      numeroFoto++;
+    } 
   }
 }

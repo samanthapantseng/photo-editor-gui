@@ -21,7 +21,7 @@ class MarcoBoton {
     pfy = py + 0.5*width/68;
     ancho = 12*width/68;
     alto = 3*width/68;
-    fill = color(#6C6C6C);
+    fill = color(#0F0F0F);
     fotorana = _foto;
     size = 2*width/68;
     fotorana.resize(size, size);
@@ -36,8 +36,8 @@ class MarcoBoton {
   
     
     noStroke();
-    if (estaEncima) fill(#000000); // estado en reposo CON hover
-    else fill(#6C6C6C); // estado en reposo SIN hover
+    if (estaEncima) fill(#6C6C6C); // estado en reposo CON hover
+    else fill(#0F0F0F); // estado en reposo SIN hover
       
 
     rect(px,py,ancho,alto);
