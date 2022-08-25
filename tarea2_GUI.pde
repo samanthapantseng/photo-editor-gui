@@ -14,6 +14,8 @@ FotoBoton[] fotoBotones;
 FiltroBoton[] filtros;
 MarcoBoton[] marcos;
 
+Boton save;
+
 void setup() {
 
   fullScreen();
@@ -23,12 +25,9 @@ void setup() {
   fotoBotones[1] = new FotoBoton((39+5)*width/68, 4*width/68, loadImage("fotoLeslie.png"), loadImage("fotoLeslie.png"));
   fotoBotones[2] = new FotoBoton((39+10)*width/68, 4*width/68, loadImage("fotoVale.png"), loadImage("fotoVale.png"));
   fotoBotones[3] = new FotoBoton((39+15)*width/68, 4*width/68, loadImage("fotoElke.png"), loadImage("fotoElke.png"));
-  add = loadImage("add.png");
   
   fotoSeleccionada = fotoBotones[0].fotoGrande;
-  
-  add.resize(4*width/68, 4*width/68);
-  
+   
   filtros = new FiltroBoton[4];    
   filtros[0] = new FiltroBoton(5*width/68, loadImage("ranita.png"), "Sepia");
   filtros[1] = new FiltroBoton(8.5*width/68, loadImage("ranita.png"),"B&W");
@@ -39,38 +38,41 @@ void setup() {
   marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"), "Blanco");
   marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"), "Foto");
   marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"), "Fiesta");
-  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"),"Flores");
+  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"),"Flores"); 
   
-  
-  
+  save = new Boton(59*width/68, 34*width/68, 4*width/68, 2*width/68, "SAVE");
 }
 
 void draw() {
-  background(#F5FFFC); 
+  
+  background(#272727); 
+  
+  // fotos
   for (int i = 0; i < fotoBotones.length; i++) {
     fotoBotones[i].dibujar();
   }  
-  image(add, (39+20)*width/68, 4*width/68);
   image(fotoSeleccionada, 39*width/68, 9*width/68);
   
+  // filtros
   for (int i = 0; i < filtros.length; i++) {
     filtros[i].dibujar();
-}
+  }
   
+  // marcos
   for (int i = 0; i < marcos.length; i++) {
     marcos[i].dibujar();
-    
-    
-    
+        
     textSize(width/68);
     textAlign(LEFT);
     text("FILTERS",2*width/68,4.5*width/68);
     
     textSize(width/68);
     textAlign(LEFT);
-    text("FRAMES",2*width/68,21.5*width/68);
-    
-}
+    text("FRAMES",2*width/68,21.5*width/68);    
+  }
+  
+  // boton
+  save.dibujar(mouseX, mouseY);
 }
 
 void mousePressed() {
