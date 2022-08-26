@@ -11,16 +11,19 @@
 PImage add;
 PImage fotoSeleccionada;
 PImage fotoGuardada;
+PImage hojaSticker;
 int numeroFotoGuardada = 1;
 int numeroFoto;
 int cantidadDeObjetos = 5;
-StickersArrastrables [] misObjetos = new StickersArrastrables [cantidadDeObjetos];
+
 
 PImage[] imagenes;
 
 FotoBoton[] fotoBotones;
 FiltroBoton[] filtros;
 MarcoBoton[] marcos;
+StickersArrastrables [] misObjetos = new StickersArrastrables [cantidadDeObjetos];
+
 
 Boton save;
 
@@ -50,6 +53,7 @@ void setup() {
   marcos[2] = new MarcoBoton(29*width/68, loadImage("ranitaFiesta.png"), "PARTY",loadImage("marcoFiesta.png"));
   marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranitaFlores.png"),"FLOWERS",loadImage("marcoFlores.png")); 
   
+  hojaSticker = loadImage ("hoja.png");
 
   imagenes = new PImage[5]; 
   imagenes[0] = loadImage("bow.png");
@@ -58,8 +62,14 @@ void setup() {
   imagenes[3] = loadImage("moustache.png");
   imagenes[4] = loadImage("lips.png");
   
+
+  
   for (int i = 0; i < cantidadDeObjetos; i++) {
-    misObjetos[i] = new StickersArrastrables ( random (width), random(height), imagenes[i]);
+    misObjetos[0] = new StickersArrastrables ( 23.2*width/68,32.05*width/68, imagenes[0]);
+    misObjetos[1] = new StickersArrastrables ( 25.5*width/68,24.55*width/68, imagenes[1]);
+    misObjetos[2] = new StickersArrastrables ( 19.95*width/68,24.4*width/68, imagenes[2]);
+    misObjetos[3] = new StickersArrastrables ( 26*width/68,29.1*width/68, imagenes[3]);
+    misObjetos[4] = new StickersArrastrables ( 20.4*width/68,28.85*width/68, imagenes[4]);
   }
 
   
@@ -79,6 +89,10 @@ void draw() {
     textAlign(LEFT);
     text("FRAMES",2*width/68,21.5*width/68); 
     
+    textSize(width/68);
+    textAlign(LEFT);
+    text("STICKERS",18*width/68,21.5*width/68); 
+    
   // fotos
   for (int i = 0; i < fotoBotones.length; i++) {
     fotoBotones[i].dibujar();
@@ -97,13 +111,16 @@ void draw() {
                 
         
   }
-  
+
+  image(hojaSticker, 18*width/68,22*width/68);
+
   
     for (int i = 0; i < cantidadDeObjetos; i++) {
     misObjetos[i].display();
   }
 
 
+  
   save.dibujar();
 }
 
