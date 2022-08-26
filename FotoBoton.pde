@@ -17,8 +17,7 @@ class FotoBoton {
 
   void dibujar() {
     
-    image(foto, x, y);
-    
+    image(foto, x, y);    
   }
   
   boolean clicked(float mX, float mY) {

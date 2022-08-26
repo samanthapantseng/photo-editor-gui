@@ -1,4 +1,5 @@
 class FiltroBoton {
+  
   PImage fotorana;
   int size;
   float px; // posición x

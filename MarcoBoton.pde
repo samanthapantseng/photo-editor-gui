@@ -1,4 +1,5 @@
 class MarcoBoton {
+  
   PImage fotorana;
   int size;
   float px; // posición x
@@ -31,8 +32,8 @@ class MarcoBoton {
     dibujarMarco = false;
   }
   
-   void dibujar() {
-    // verifica si el mouse esta cerca del objeto y cambia su estado al hover
+  void dibujar() {
+  // verifica si el mouse esta cerca del objeto y cambia su estado al hover
     if (mouseX > px && mouseX < px+ancho && mouseY < py+alto && mouseY > py) {
       estaEncima = true;
     } else {
@@ -40,14 +41,17 @@ class MarcoBoton {
     }
     
     noStroke();
+    
     if (estaEncima) {
-      //con hover
+    //con hover
       fill(#6C6C6C);
       rect(px,py,ancho,alto);
       
-      // fill de texto
+    // fill de texto
       fill(#FFFFFF);
-    } else {
+    }     
+    
+    else {
       //sin hover
       fill(#0F0F0F);
       rect(px,py,ancho,alto);
@@ -63,20 +67,18 @@ class MarcoBoton {
       // fill de texto
       fill(#0F0F0F);
     }
+    
     image(fotorana,pfx, pfy);
     
     textSize(0.7*width/68);
     textAlign(LEFT);
-    text(nombre, pfx+3*width/68, pfy+1.2*width/68);
-    
-  }
+    text(nombre, pfx+3*width/68, pfy+1.2*width/68);    
+    }
   
   void displayMarco() {
-    if (dibujarMarco == true){
+    if (dibujarMarco == true) {
      marco.resize(24*width/68, 24*width/68);
-     image(marco,39*width/68, 9*width/68);
-     
-    
-}
-}
+     image(marco,39*width/68, 9*width/68);         
+    }
+  }
 }

@@ -37,9 +37,6 @@ class Boton {
     } else {
       estaEncima = false;
     }
-  }
-  
-  
-  
+  }  
 }
   

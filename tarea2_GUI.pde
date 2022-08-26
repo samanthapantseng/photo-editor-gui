@@ -66,22 +66,16 @@ void draw() {
   // marcos
   for (int i = 0; i < marcos.length; i++) {
     marcos[i].dibujar();
-        
+    marcos[i].displayMarco();
+                
     textSize(width/68);
     textAlign(LEFT);
     text("FILTERS",2*width/68,4.5*width/68);
     
     textSize(width/68);
     textAlign(LEFT);
-    text("FRAMES",2*width/68,21.5*width/68); 
-    
-                   
-      
-    marcos[i].displayMarco();
-    
+    text("FRAMES",2*width/68,21.5*width/68);     
   }
- 
-  
   save.dibujar();
 }
 
@@ -97,7 +91,7 @@ void mousePressed() {
       }
     }
     
-    // Filtro
+    // filtro
     for (int i = 0; i < filtros.length; i++) {      
       if (filtros[i].estaEncima) {
         
@@ -113,16 +107,13 @@ void mousePressed() {
           
           if (i == 0) {
             fotoSeleccionada.filter(POSTERIZE, 7);
-          }  
-          
+          }            
           if (i == 1) {
             fotoSeleccionada.filter(GRAY);
-          }
-          
+          }          
           if (i == 2) {
             fotoSeleccionada.filter(THRESHOLD, 0.5);
-          }
-          
+          }          
           if (i == 3) {
             fotoSeleccionada.filter(INVERT);
           }
@@ -130,7 +121,7 @@ void mousePressed() {
       }
     }
     
-    
+    // marcos
     for (int i = 0; i < marcos.length; i++) {      
       if (marcos[i].estaEncima) {
         
@@ -143,11 +134,7 @@ void mousePressed() {
         else {
           clearMarcoBotones();
           marcos[i].estaSeleccionado = true;
-          marcos[i].dibujarMarco = true;
-          
-          
-          
-   
+          marcos[i].dibujarMarco = true;         
         }        
       }
     }
@@ -171,11 +158,11 @@ void clearFiltroBotones() {
   fotoSeleccionada = fotoBotones[numeroFoto].fotoGrande.copy();
 }
   
-  void clearMarcoBotones() {
+void clearMarcoBotones() {
   for (int i = 0; i < marcos.length; i++) {
     marcos[i].estaSeleccionado = false;
      marcos[i].dibujarMarco = false;
   }
-  }
+}
   
  
