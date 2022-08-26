@@ -111,7 +111,7 @@ void draw() {
                 
         
   }
-
+//  hojaSticker.resize(13*width/68,14*width/68);
   image(hojaSticker, 18*width/68,22*width/68);
 
   
