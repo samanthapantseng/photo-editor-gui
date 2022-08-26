@@ -13,6 +13,10 @@ PImage fotoSeleccionada;
 PImage fotoGuardada;
 int numeroFotoGuardada = 1;
 int numeroFoto;
+int cantidadDeObjetos = 5;
+StickersArrastrables [] misObjetos = new StickersArrastrables [cantidadDeObjetos];
+
+PImage[] imagenes;
 
 FotoBoton[] fotoBotones;
 FiltroBoton[] filtros;
@@ -45,6 +49,19 @@ void setup() {
   marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranitaMetal.png"), "MIRROR",loadImage("marcoMetal.png"));
   marcos[2] = new MarcoBoton(29*width/68, loadImage("ranitaFiesta.png"), "PARTY",loadImage("marcoFiesta.png"));
   marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranitaFlores.png"),"FLOWERS",loadImage("marcoFlores.png")); 
+  
+
+  imagenes = new PImage[5]; 
+  imagenes[0] = loadImage("bow.png");
+  imagenes[1] = loadImage("hat.png");
+  imagenes[2] = loadImage("crown.png");
+  imagenes[3] = loadImage("moustache.png");
+  imagenes[4] = loadImage("lips.png");
+  
+  for (int i = 0; i < cantidadDeObjetos; i++) {
+    misObjetos[i] = new StickersArrastrables ( random (width), random(height), imagenes[i]);
+  }
+
   
   save = new Boton(59*width/68, 34*width/68, 4*width/68, 2*width/68, "SAVE");
 }
@@ -80,6 +97,13 @@ void draw() {
                 
         
   }
+  
+  
+    for (int i = 0; i < cantidadDeObjetos; i++) {
+    misObjetos[i].display();
+  }
+
+
   save.dibujar();
 }
 
@@ -142,6 +166,10 @@ void mousePressed() {
         }        
       }
     }
+    // stickers
+    for (int i = 0; i < cantidadDeObjetos; i++) {
+      misObjetos[i].atrapandome();
+  }
     
     // screenshot
     if (save.estaEncima) {
@@ -166,6 +194,18 @@ void clearMarcoBotones() {
   for (int i = 0; i < marcos.length; i++) {
     marcos[i].estaSeleccionado = false;
      marcos[i].dibujarMarco = false;
+  }
+}
+
+void mouseDragged() {
+  for (int i = 0; i < cantidadDeObjetos; i++) {
+    misObjetos[i].arrastrandome();
+  }
+} // end of mouseDragged
+
+void mouseReleased() {
+  for (int i = 0; i < cantidadDeObjetos; i++) {
+    misObjetos[i].soltandome();
   }
 }
   
