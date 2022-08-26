@@ -40,10 +40,10 @@ void setup() {
   filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranitaXray.jpg"),"X-RAY");
   
   marcos = new MarcoBoton[4];    
-  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"), "POLAROID",loadImage("marcoPola.png"));
-  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"), "MIRROR",loadImage("marcoMetal.png"));
-  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"), "PARTY",loadImage("marcoFiesta.png"));
-  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"),"FLOWERS",loadImage("marcoFlores.png")); 
+  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranitaPola.png"), "POLAROID",loadImage("marcoPola.png"));
+  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranitaMetal.png"), "MIRROR",loadImage("marcoMetal.png"));
+  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranitaFiesta.png"), "PARTY",loadImage("marcoFiesta.png"));
+  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranitaFlores.png"),"FLOWERS",loadImage("marcoFlores.png")); 
   
   save = new Boton(59*width/68, 34*width/68, 4*width/68, 2*width/68, "SAVE");
 }
@@ -52,6 +52,15 @@ void draw() {
   
   background(#272727); 
   
+  fill(#ffffff);
+  textSize(width/68);
+    textAlign(LEFT);
+    text("FILTERS",2*width/68,4.5*width/68);
+    
+    textSize(width/68);
+    textAlign(LEFT);
+    text("FRAMES",2*width/68,21.5*width/68); 
+    
   // fotos
   for (int i = 0; i < fotoBotones.length; i++) {
     fotoBotones[i].dibujar();
@@ -68,13 +77,7 @@ void draw() {
     marcos[i].dibujar();
     marcos[i].displayMarco();
                 
-    textSize(width/68);
-    textAlign(LEFT);
-    text("FILTERS",2*width/68,4.5*width/68);
-    
-    textSize(width/68);
-    textAlign(LEFT);
-    text("FRAMES",2*width/68,21.5*width/68);     
+        
   }
   save.dibujar();
 }
