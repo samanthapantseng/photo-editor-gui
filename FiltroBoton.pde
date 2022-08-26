@@ -47,7 +47,7 @@ class FiltroBoton {
       fill(#FFFFFF);
     } else {
       //sin hover
-      fill(#0F0F0F);
+      fill(#1E1E1E);
       rect(px, py, ancho, alto);
 
       // fill de texto

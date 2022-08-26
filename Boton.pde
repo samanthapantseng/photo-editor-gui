@@ -21,7 +21,7 @@ class Boton {
       fill(#D4D4D4);
       rect(x, y, w, h);
 
-      fill(#0F0F0F);
+      fill(#1E1E1E);
     } else {
       fill(clr);
       rect(x, y, w, h);

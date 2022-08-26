@@ -28,10 +28,13 @@ class StickersArrastrables {
   // métodos ----------------------------------
   void display() {
     estaEncima = mouseX>miX-miTamagno / 2 && mouseX<miX+miTamagno / 2 && mouseY>miY-miTamagno / 2 && mouseY<miY+miTamagno / 2;
+   
+    
     
     // despliega la imagen
     image(miImagen, miX, miY);
     
+   
 
     stroke(0, 0, 15); // background color
     noFill();
