@@ -40,10 +40,10 @@ void setup() {
   filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranitaXray.jpg"),"X-RAY");
   
   marcos = new MarcoBoton[4];    
-  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"), "Blanco",loadImage("marcoMetal.png"));
-  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"), "Foto",loadImage("marcoPola.png"));
-  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"), "Fiesta",loadImage("marcoFiesta.png"));
-  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"),"Flores",loadImage("marcoFlores.png")); 
+  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"), "POLAROID",loadImage("marcoPola.png"));
+  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"), "MIRROR",loadImage("marcoMetal.png"));
+  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"), "PARTY",loadImage("marcoFiesta.png"));
+  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"),"FLOWERS",loadImage("marcoFlores.png")); 
   
   save = new Boton(59*width/68, 34*width/68, 4*width/68, 2*width/68, "SAVE");
 }
