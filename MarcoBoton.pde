@@ -8,7 +8,7 @@ class MarcoBoton {
   float ancho;  // ancho
   float alto; // largo
   color fill; // relleno
-  boolean estaEncima, estaSeleccionado;
+  boolean estaEncima, estaSeleccionado, dibujarMarco;
   String nombre;
   PImage marco;
   
@@ -28,6 +28,7 @@ class MarcoBoton {
     
     estaSeleccionado = false;
     marco = _marco;
+    dibujarMarco = false;
   }
   
    void dibujar() {
@@ -71,7 +72,11 @@ class MarcoBoton {
   }
   
   void displayMarco() {
+    if (dibujarMarco == true){
+     marco.resize(24*width/68, 24*width/68);
      image(marco,39*width/68, 9*width/68);
+     
     
+}
 }
 }
