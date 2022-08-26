@@ -29,6 +29,7 @@ class FiltroBoton {
     estaSeleccionado = false;
   }
   
+  
   void dibujar() {
     // verifica si el mouse esta cerca del objeto y cambia su estado al hover
     if (mouseX > px && mouseX < px+ancho && mouseY < py+alto && mouseY > py) {

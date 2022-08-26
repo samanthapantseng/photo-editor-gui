@@ -40,10 +40,10 @@ void setup() {
   filtros[3] = new FiltroBoton(15.5*width/68, loadImage("ranitaXray.jpg"),"X-RAY");
   
   marcos = new MarcoBoton[4];    
-  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"), "Blanco");
-  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"), "Foto");
-  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"), "Fiesta");
-  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"),"Flores"); 
+  marcos[0] = new MarcoBoton(22*width/68, loadImage("ranita.png"), "Blanco",loadImage("marcoMetal.png"));
+  marcos[1] = new MarcoBoton(25.5*width/68, loadImage("ranita.png"), "Foto",loadImage("marcoPola.png"));
+  marcos[2] = new MarcoBoton(29*width/68, loadImage("ranita.png"), "Fiesta",loadImage("marcoFiesta.png"));
+  marcos[3] = new MarcoBoton(32.5*width/68, loadImage("ranita.png"),"Flores",loadImage("marcoFlores.png")); 
   
   save = new Boton(59*width/68, 34*width/68, 4*width/68, 2*width/68, "SAVE");
 }
@@ -125,6 +125,26 @@ void mousePressed() {
       }
     }
     
+    
+    for (int i = 0; i < marcos.length; i++) {      
+      if (marcos[i].estaEncima) {
+        
+        // apagar Filtro
+        if (marcos[i].estaSeleccionado == true) {
+          clearMarcoBotones();                    
+        }
+        
+        // prender Filtro
+        else {
+          clearMarcoBotones();
+          marcos[i].estaSeleccionado = true;
+          marcos[i].displayMarco();
+          
+   
+        }        
+      }
+    }
+    
     // screenshot
     if (save.estaEncima) {
       fotoGuardada = get(39*width/68, 9*width/68, 24*width/68, 24*width/68);
@@ -134,10 +154,39 @@ void mousePressed() {
   }
 }
 
+void mouseReleased(){
+for (int i = 0; i < marcos.length; i++) {      
+      if (marcos[i].estaEncima) {
+        
+        // apagar Filtro
+        if (marcos[i].estaSeleccionado == true) {
+          clearMarcoBotones();                    
+        }
+        
+        // prender Filtro
+        else {
+          clearMarcoBotones();
+          marcos[i].estaSeleccionado = true;
+          marcos[i].displayMarco();
+          
+   
+        }        
+      }
+    }
+}
+
 void clearFiltroBotones() {
   for (int i = 0; i < filtros.length; i++) {
     filtros[i].estaSeleccionado = false;
+    
   }
-  
   fotoSeleccionada = fotoBotones[numeroFoto].fotoGrande.copy();
 }
+  
+  void clearMarcoBotones() {
+  for (int i = 0; i < marcos.length; i++) {
+    marcos[i].estaSeleccionado = false;
+  }
+  fotoSeleccionada = fotoBotones[numeroFoto].fotoGrande.copy();
+  }
+ 
