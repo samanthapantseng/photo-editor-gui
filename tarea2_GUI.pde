@@ -1,4 +1,3 @@
-//<<<<<<< HEAD
 /* Tecnológico de Costa Rica
  Escuela de Diseño Industrial
  D7 Visual - Tarea 2 GUI
@@ -65,8 +64,6 @@ void setup() {
   imagenes[3] = loadImage("moustache.png");
   imagenes[4] = loadImage("lips.png");
 
-
-
   for (int i = 0; i < cantidadDeObjetos; i++) {
     misObjetos[0] = new StickersArrastrables ( 23.2*width/68, 32.05*width/68, imagenes[0]);
     misObjetos[1] = new StickersArrastrables ( 25.5*width/68, 24.55*width/68, imagenes[1]);
@@ -74,7 +71,6 @@ void setup() {
     misObjetos[3] = new StickersArrastrables ( 26*width/68, 29.1*width/68, imagenes[3]);
     misObjetos[4] = new StickersArrastrables ( 20.4*width/68, 28.85*width/68, imagenes[4]);
   }
-
 
   save = new Boton(59*width/68, 34*width/68, 4*width/68, 2*width/68, "SAVE");
 
@@ -89,10 +85,10 @@ void draw() {
   background(#272727);
   fill(#1E1E1E);
   rect(0, 0, width, 3*height/68);
-  
-   //rectangulo fondo
-    fill(#1E1E1E);
-    rect(18*width/68,22*width/68,15*width/68,22*height/68);
+
+  //rectangulo fondo
+  fill(#1E1E1E);
+  rect(18*width/68, 22*width/68, 15*width/68, 22*height/68);
 
   // títulos
   fill(#ffffff, 70);
@@ -100,7 +96,6 @@ void draw() {
   textAlign(CENTER);
   text("foto_feliz.jpg", width/2, 2*height/68);
   
-
   fill(#ffffff);
   textSize(width/68);
   textAlign(LEFT);
@@ -118,7 +113,7 @@ void draw() {
   textAlign(LEFT);
   text("TINT", 18*width/68, 4.5*width/68);
 
-//ColorWheel
+  //ColorWheel
   colorWheel.display();
 
   // fotos
@@ -142,12 +137,9 @@ void draw() {
   //  hojaSticker.resize(13*width/68,14*width/68);
   //image(hojaSticker, 18*width/68, 22*width/68);
 
-
   for (int i = 0; i < cantidadDeObjetos; i++) {
     misObjetos[i].display();
   }
-
-
 
   save.dibujar();
 }
@@ -246,7 +238,7 @@ void mouseDragged() {
     misObjetos[i].arrastrandome();
   }
   colorWheel.dragSobreMi();
-} // end of mouseDragged
+} 
 
 void mouseReleased() {
   for (int i = 0; i < cantidadDeObjetos; i++) {
